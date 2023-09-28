@@ -1,10 +1,12 @@
 import { Voiture } from "./Voiture";
+import { Vehicule } from "./Vehicule";
 
-export class Garage {
+export class Garage{
     private _nomdugarage: string;
-    private _listedevoitures: Voiture[];    
+    private _listedevehicules: Vehicule[];    
+   
 
-    voiturelamoinschere(listedevoitures : Voiture[]): Voiture{
+    voiturelamoinschere(listedevoitures : Vehicule[]): Voiture{
         let laVoitureLaMoinsChere : Voiture
         listedevoitures.sort((voiturea, voitureb) => voiturea.prix - voitureb.prix)
         laVoitureLaMoinsChere = listedevoitures[0]
@@ -12,7 +14,7 @@ export class Garage {
         return laVoitureLaMoinsChere;
         
     }
-    voiturelapluschere(listedevoitures : Voiture[]): Voiture{
+    voiturelapluschere(listedevoitures : Vehicule[]): Voiture{
         let laVoitureLaPlusChere : Voiture
         listedevoitures.sort((voiturea, voitureb) => voitureb.prix - voiturea.prix)
         laVoitureLaPlusChere = listedevoitures [0]
@@ -20,16 +22,16 @@ export class Garage {
         return laVoitureLaPlusChere;
     }
 
-    couleurvoiture(listedevoitures : Voiture[]) : Voiture[]{
+    couleurvoiture(listedevoitures : Vehicule[]) : Voiture[]{
         let voiturebleuvertigo = listedevoitures.filter((element) => element.couleur == "Bleu Vertigo");
         console.log("les voitures de couleur bleu vertigo sont : " ,voiturebleuvertigo)
         return voiturebleuvertigo;
     }
 
-    constructor (nomdugarage : string, listedevoitures: Voiture[]){
-       
+    constructor (nomdugarage : string, listedevehicules : Vehicule[]){
+        
         this._nomdugarage = nomdugarage
-        this._listedevoitures = listedevoitures
+        this._listedevehicules = listedevehicules
     }
     public get nomdugarage(): string {
         return this._nomdugarage;
@@ -37,11 +39,11 @@ export class Garage {
     public set nomdugarage(value: string) {
         this._nomdugarage = value;
     }
-    public get listedevoitures(): Voiture[] {
-        return this._listedevoitures;
+    public get listedevehicules(): Vehicule[] {
+        return this._listedevehicules;
     }
-    public set listedevoitures(value: Voiture[]) {
-        this._listedevoitures = value;
+    public set listedevehicules(value: Vehicule[]) {
+        this._listedevehicules = value;
     }
     
 }
