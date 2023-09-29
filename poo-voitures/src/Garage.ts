@@ -1,4 +1,6 @@
 import { Voiture } from "./Voiture";
+import { Camion } from "./Camion";
+import { Moto } from "./Moto";
 import { Vehicule } from "./Vehicule";
 
 export class Garage{
@@ -27,7 +29,26 @@ export class Garage{
         console.log("les voitures de couleur bleu vertigo sont : " ,voiturebleuvertigo)
         return voiturebleuvertigo;
     }
-
+    getlistevehiculepartype(monType:string) {
+        this._listedevehicules.forEach(monVehicule => {
+            if (monType == "Moto") {
+                if (monVehicule instanceof Moto) {
+                    console.log(monVehicule) 
+                } 
+            }
+            else if(monType == "Camion") {
+                if (monVehicule instanceof Camion) {
+                    console.log(monVehicule) 
+                } 
+            }
+            else if(monType == "Voiture") {
+                if (monVehicule instanceof Voiture) {
+                    console.log(monVehicule) 
+                } 
+            }
+            
+        });
+    }
     constructor (nomdugarage : string, listedevehicules : Vehicule[]){
         
         this._nomdugarage = nomdugarage

@@ -2,6 +2,7 @@ import { Voiture } from "./Voiture";
 import { Garage } from "./Garage";
 import { Vehicule } from "./Vehicule";
 import { Moto } from "./Moto";
+import { Camion } from "./Camion";
 
 const voiture1 = new Voiture("Peugeot","208", "FY-700-TP","Bleu Vertigo", 5954, 22000, 2021)
 const voiture2 = new Voiture("Renault","CLio","EN-214-BB", "Rouge Rubis", 37245, 14500,2017)
@@ -24,7 +25,12 @@ garage1.couleurvoiture([voiture1,voiture2,voiture3,voiture4,voiture5,voiture6])
 //garage1.listedevehicules.forEach((vehicule)=> console.log(vehicule.constructor.name))
 
 //Création d'un nouveau véhicule de la classe Moto
-garage1.listedevehicules.push(new Moto("Yamaha", "125", "GC-600-AM","Noir", 2789, 29840,2023))
+garage1.listedevehicules.push(new Moto("Yamaha", "125", "HH-214-AM","Noir", 3457, 4789,2023))
+garage1.listedevehicules.push(new Camion("MAN", "TGM", "AB-941-DD","Jaune", 1542002, 457000,2005 ))
+garage1.listedevehicules.push(voiture6)
 
 //Vérifier que l'ajout de la moto est bien inclus ds la liste des véhicules du garage1
 garage1.listedevehicules.forEach((vehicule)=> console.log(vehicule.constructor.name));
+garage1.getlistevehiculepartype("Moto");
+garage1.getlistevehiculepartype("Camion");
+garage1.getlistevehiculepartype("Voiture");
